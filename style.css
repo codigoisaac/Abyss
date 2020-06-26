@@ -1,0 +1,34 @@
+:root {
+  --c0: #0c0e0a;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#controls {
+  background-color: var(--c0);
+  color: gray;
+  font-family: "Courier New", Courier, monospace;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+input {
+  max-width: 2.8rem;
+  margin-right: 1rem;
+}
+
+.inputGroup {
+  background-color: var(--c5);
+  padding: 0 1rem;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}

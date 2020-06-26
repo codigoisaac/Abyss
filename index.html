@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML5 Canvas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="centered" id="controls">
+      <!-- Line Width -->
+      <div class="inputGroup centered" id="line-width">
+        <!-- Auto Line Width  -->
+        <div class="label-and-input">
+          <label for="autoLineWidth">Auto Line Width:</label>
+          <input
+            type="checkbox"
+            name="autoLineWidth"
+            id="autoLineWidth"
+            checked
+          />
+        </div>
+
+        <!-- Enter Line Width  -->
+        <div class="label-and-input">
+          <label for="lineWidth">Line Width:</label>
+          <input type="number" name="lineWidth" id="lineWidth" value="1" />
+        </div>
+
+        <!-- Max Line Width -->
+        <div class="label-and-input">
+          <label for="maxLineWidth">Max Line Width:</label>
+          <input
+            type="number"
+            name="maxLineWidth"
+            id="maxLineWidth"
+            value="200"
+          />
+        </div>
+      </div>
+
+      <!-- Color -->
+      <div class="inputGroup centered" id="line-color">
+        <!-- Auto Line Color  -->
+        <div class="label-and-input">
+          <label for="autoColor">Auto Line Color:</label>
+          <input type="checkbox" name="autoColor" id="autoColor" />
+        </div>
+
+        <!-- Enter Line Color  -->
+        <div class="label-and-input">
+          <label for="lineColor">Line Color:</label>
+          <input type="color" name="lineColor" id="lineColor" />
+        </div>
+      </div>
+
+      <!-- Others-->
+      <div class="inputGroup centered" id="reset-point">
+        <div class="label-and-input">
+          <label for="resetPoint">Reset Point:</label>
+          <input type="checkbox" id="resetPoint" checked />
+        </div>
+      </div>
+    </div>
+
+    <canvas id="draw" width="800" height="800"></canvas>
+
+    <script src="main.js"></script>
+  </body>
+</html>
