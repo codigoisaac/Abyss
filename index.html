@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Abyss</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="input.css" />
   </head>
   <body>
     <div class="centered" id="controls">
@@ -29,27 +30,38 @@
         <!-- Max Line Width -->
         <div class="label-and-input">
           <label for="maxLineWidth">Max Line Width:</label>
-          <input
-            type="number"
-            name="maxLineWidth"
-            id="maxLineWidth"
-            value="200"
-          />
+          <input type="number" id="maxLineWidth" value="200" />
         </div>
       </div>
 
       <!-- Color -->
       <div class="inputGroup centered" id="line-color">
-        <!-- Auto Line Color  -->
-        <div class="label-and-input">
-          <label for="autoColor">Auto Line Color:</label>
-          <input type="checkbox" name="autoColor" id="autoColor" />
+        <!-- Auto -->
+        <div class="inputGroup1 centered">
+          <!-- Auto Line Color  -->
+          <div class="label-and-input">
+            <label for="autoColor">Auto Color:</label>
+            <input type="checkbox" name="autoColor" id="autoColor" checked />
+          </div>
         </div>
 
-        <!-- Enter Line Color  -->
-        <div class="label-and-input">
-          <label for="lineColor">Line Color:</label>
-          <input type="color" name="lineColor" id="lineColor" />
+        <!-- HSL Picker -->
+        <div class="inputGroup1 centered">
+          <!-- hue -->
+          <div class="label-and-input">
+            <label for="hue">hue:</label>
+            <input type="range" id="hue" value="0" max="360" />
+          </div>
+          <!-- saturation -->
+          <div class="label-and-input">
+            <label for="saturation">saturation:</label>
+            <input type="range" id="saturation" value="50" />
+          </div>
+          <!-- lightness -->
+          <div class="label-and-input">
+            <label for="lightness">lightness:</label>
+            <input type="range" id="lightness" value="50" />
+          </div>
         </div>
       </div>
 
