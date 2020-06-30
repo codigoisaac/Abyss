@@ -28,43 +28,48 @@ canvas.addEventListener("mouseup", () => (isDrawing = false));
 canvas.addEventListener("mouseout", () => (isDrawing = false));
 
 // CONTROLS
-// Line Width
-let maxLW = 200;
-const lineWInput = document.querySelector("#lineWidth");
-lineWInput.addEventListener("change", () => {
-  ctx.lineWidth = lineWInput.value;
-  if (lineWInput.value > maxLW) {
-    maxLWInput.value = lineWInput.value;
-  }
-});
-
 // Auto Line Width
-let isAutoLW = true;
 const autoLWInput = document.querySelector("#autoLineWidth");
-autoLWInput.addEventListener("change", () => {
-  isAutoLW = autoLWInput.checked;
-  maxLWInput.disabled = isAutoLW ? false : true; // toggle disabled
-});
-
+autoLWInput.addEventListener("change", toggleAutoLW);
+let isAutoLW = true;
+// Line Width
+const LWInput = document.querySelector("#lineWidth");
+LWInput.addEventListener("change", changeLWInput);
+let lw = LWInput.value;
 // Max Line Width
 const maxLWInput = document.querySelector("#maxLineWidth");
-maxLWInput.addEventListener("change", () => {
-  maxLW = maxLWInput.value;
-  if (maxLW < lineWInput.value) {
-    lineWInput.value = maxLWInput.value;
+maxLWInput.addEventListener("change", changeMaxLWInput);
+let maxLW = maxLWInput.value;
+
+function toggleAutoLW() {
+  isAutoLW = autoLWInput.checked;
+  maxLWInput.disabled = isAutoLW ? false : true;
+}
+function changeLWInput() {
+  lw = LWInput.value;
+  ctx.lineWidth = lw;
+  if (lw > maxLW) {
+    maxLWInput.value = lw;
   }
-});
+}
+function changeMaxLWInput() {
+  maxLW = maxLWInput.value;
+  if (maxLW < lw) {
+    LWInput.value = maxLW;
+    ctx.lineWidth = LWInput.value;
+    lw = LWInput.value;
+  }
+}
 
 // Auto color
 let isAutoColor = true;
 const autoColor = document.querySelector("#autoColor");
 autoColor.addEventListener("change", () => (isAutoColor = autoColor.checked));
 
-// Color hsl
+// HSL Picker
 let hue = 0;
 let saturation = 50;
 let lightness = 50;
-
 // Hue
 const hueIn = document.querySelector("#hue");
 hueIn.addEventListener("change", () => (hue = hueIn.value));
@@ -88,6 +93,16 @@ let direction = false;
 function draw(e) {
   if (!isDrawing) return;
 
+  // change Line Width
+  if (isAutoLW) {
+    if (ctx.lineWidth > maxLWInput.value || ctx.lineWidth <= 1) {
+      direction = !direction;
+    }
+    direction ? ctx.lineWidth++ : ctx.lineWidth--;
+    LWInput.value = ctx.lineWidth;
+    lw = ctx.lineWidth;
+  }
+
   // color
   ctx.strokeStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 
@@ -106,15 +121,4 @@ function draw(e) {
   ctx.stroke();
   // mouse brush (remove to see bug)
   [lastX, lastY] = [e.offsetX, e.offsetY];
-
-  // change Line Width
-  if (isAutoLW) {
-    if (ctx.lineWidth >= maxLW || ctx.lineWidth <= 1) {
-      direction = !direction; // bug when maxLW > LW
-      // now we have to bring ctx.lineWidth back till it
-      // becomes less than maxLW or more than 1 again
-    }
-    direction ? ctx.lineWidth++ : ctx.lineWidth--;
-    lineWInput.value = ctx.lineWidth;
-  }
 }

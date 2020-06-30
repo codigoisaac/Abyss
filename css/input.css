@@ -3,6 +3,15 @@
   --ic1: #222;
 }
 
+input.small {
+  max-width: 2.8rem;
+  /* margin-right: 1rem; */
+}
+
+input.hsl {
+  max-width: 8rem;
+}
+
 /* Color  */
 input[type="color"] {
   border-radius: 100%;
