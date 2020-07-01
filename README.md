@@ -14,4 +14,4 @@ Eu gostei bastante do exercício e do resultado dele, me deverti fazendo desenho
 - Escolher cores com valores HSL;
 - Ligar e desligar o resetar do ponto de linha para fazer linhas retas.
 
-Espero que tenha gostado;
+Espero que tenha gostado. E obrigado por ver!
