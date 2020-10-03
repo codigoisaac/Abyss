@@ -8,7 +8,10 @@ ctx.lineJoin = "round";
 ctx.lineCap = "round";
 
 // enable to add shadow
-// ctx.globalCompositeOperation = "multiply";
+let shadow = false;
+if (shadow) {
+  ctx.globalCompositeOperation = "multiply";
+}
 
 let isDrawing = false;
 let lastX = 0;
