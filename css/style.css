@@ -8,6 +8,10 @@ body {
   background-color: black;
 }
 
+canvas {
+  display: block;
+}
+
 .centered {
   display: flex;
   justify-content: center;
