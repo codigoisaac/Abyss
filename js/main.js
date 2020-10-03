@@ -7,12 +7,6 @@ const ctx = canvas.getContext("2d");
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
 
-// enable to add shadow
-let shadow = false;
-if (shadow) {
-  ctx.globalCompositeOperation = "multiply";
-}
-
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
@@ -90,6 +84,17 @@ resetPointInput.addEventListener(
   "change",
   () => (isResetPoint = !isResetPoint)
 );
+// Shadow
+let shadow = false;
+const shadowInput = document.querySelector("#shadowInput");
+shadowInput.addEventListener("change", () => {
+  shadow = !shadow;
+  if (shadow) {
+    ctx.globalCompositeOperation = "multiply";
+  } else {
+    ctx.globalCompositeOperation = "source-over";
+  }
+});
 
 let direction = false;
 
