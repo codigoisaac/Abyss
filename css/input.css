@@ -31,7 +31,6 @@ input[type="color"]::-webkit-color-swatch {
 /* Range  */
 input[type="range"] {
   height: 1rem;
-  -webkit-appearance: none;
   margin: 5px 0;
   width: 100%;
   background-color: transparent;
@@ -42,7 +41,6 @@ input[type="range"]:focus {
 input[type="range"]::-webkit-slider-runnable-track {
   cursor: pointer;
   border-radius: 1px;
-  border: 1px solid var(--ic0);
 }
 input[type="range"]::-webkit-slider-thumb {
   border: 1px solid var(--ic0);
