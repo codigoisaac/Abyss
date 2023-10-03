@@ -1,6 +1,6 @@
 // Set Canvas
 const canvas = document.querySelector("canvas");
-canvas.width = window.innerWidth;
+canvas.width = (navigator.appVersion.indexOf("Chrome/") != -1) ? window.innerWidth - 17 : window.innerWidth;
 canvas.height = window.innerHeight;
 // Set Context
 const ctx = canvas.getContext("2d");
