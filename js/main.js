@@ -130,3 +130,6 @@ function draw(e) {
   // mouse brush (remove to see bug)
   [lastX, lastY] = [e.offsetX, e.offsetY];
 }
+
+// Disable right click
+document.addEventListener("contextmenu", (event) => event.preventDefault());
