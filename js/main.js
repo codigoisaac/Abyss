@@ -133,3 +133,13 @@ function draw(e) {
 
 // Disable right click
 document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+// Hide/Show controls bar
+document.addEventListener("keyup", (event) => {
+  if (event.code === "Space") {
+    const controlsBar = document.getElementById("controls");
+    const display = controlsBar.style.display;
+
+    controlsBar.style.display = display === "none" ? "flex" : "none";
+  }
+});
