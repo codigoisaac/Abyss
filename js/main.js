@@ -16,8 +16,8 @@ canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mousedown", (e) => {
   isDrawing = true;
 
-  // reset point
-  if (isResetPoint) {
+  // connect points
+  if (!shouldConnectPoints) {
     [lastX, lastY] = [e.offsetX, e.offsetY];
   }
 });
@@ -77,12 +77,12 @@ satIn.addEventListener("change", () => (saturation = satIn.value));
 const ligIn = document.querySelector("#lightness");
 ligIn.addEventListener("change", () => (lightness = ligIn.value));
 
-// Reset Point
-let isResetPoint = true;
-const resetPointInput = document.querySelector("#resetPoint");
-resetPointInput.addEventListener(
+// Connect Points
+let shouldConnectPoints = false;
+const connectPointsInput = document.querySelector("#connectPoints");
+connectPointsInput.addEventListener(
   "change",
-  () => (isResetPoint = !isResetPoint)
+  () => (shouldConnectPoints = !shouldConnectPoints)
 );
 // Shadow
 let shadow = false;
