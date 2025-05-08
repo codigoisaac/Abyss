@@ -1,17 +1,16 @@
 # Abyss
 
-Canvas para arte abstrata.
+Quando você olha para o abismo, o abismo olha de você para você.
 
-Esse projeto nasceu de um exercício do curso JavaScript30 de Wes Bos.
-No exercício nós criamos um canvas onde você pode desenhar com o mouse e as cores e o tamanho da linha mudam conforme você desenha.
+Esse é um app para você fazer desenhos, artes abstratas. Feito com HTML, HTML Canvas, CSS e JavaScript.
 
-Eu gostei bastante do exercício e do resultado dele, me deverti fazendo desenhos malucos na tela e decidi deixar o projeto mais interessante mudando a cara dele e acrescentando algumas funcionalidades como:
+Algumas das funcionalidades:
 
 - Ligar e desligar a mudança automática da largura da linha;
-- Mudar na tela a largura da linha;
+- Mudar a largura da linha;
 - Especificar uma largura máxima para a linha quando a mudança automática de largura está ligada;
 - Ligar e desligar a mudança automática de cor;
 - Escolher cores com valores HSL;
-- Ligar e desligar o resetar do ponto de linha para fazer linhas retas.
+- Ligar e desligar o resete do ponto de linha, para fazer linhas retas a cada clique.
 
 Espero que tenha gostado. E obrigado por ver!
